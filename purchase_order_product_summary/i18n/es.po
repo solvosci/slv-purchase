@@ -1,0 +1,68 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_order_product_summary
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-25 14:47+0000\n"
+"PO-Revision-Date: 2021-02-25 15:50+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: purchase_order_product_summary
+#: model:ir.actions.report,print_report_name:purchase_order_product_summary.action_report_purchase_order
+msgid "'Purchase order with product summary - %s' % (object.name)"
+msgstr "'Pedido de compra con resumen totales - %s' % (object.name)"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "<strong>Code</strong>"
+msgstr "<strong>Código</strong>"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Fecha de pedido:</strong>"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "<strong>Product Name</strong>"
+msgstr "<strong>Nombre del producto</strong>"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "Cancelled Purchase Order #"
+msgstr "Pedido de compra cancelado #"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "Product Summary:"
+msgstr "Resumen Totales:"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "Purchase Order #"
+msgstr "Orden de Compra #"
+
+#. module: purchase_order_product_summary
+#: model:ir.actions.report,name:purchase_order_product_summary.action_report_purchase_order
+msgid "Purchase order with product summary"
+msgstr "Pedido de compra con resumen totales"
+
+#. module: purchase_order_product_summary
+#: model_terms:ir.ui.view,arch_db:purchase_order_product_summary.report_purchasesummary_document
+msgid "Request for Quotation #"
+msgstr "Solicitud de presupuesto #"

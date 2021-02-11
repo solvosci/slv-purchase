@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            string="Purchase order with product summary" 
+            id="action_report_purchase_order" 
+            model="purchase.order" 
+            report_type="qweb-pdf"
+            name="purchase_order_product_summary.report_purchasesummary" 
+            file="purchase_order_product_summary.report_purchasesummary"
+            print_report_name="'Purchase order with product summary - %s' % (object.name)"
+        />
+    </data>
+</odoo>
