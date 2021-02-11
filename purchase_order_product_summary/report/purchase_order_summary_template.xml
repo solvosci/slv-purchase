@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_purchasesummary_document">
+        <t t-call="web.external_layout">
+            <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
+            <div class="page" id="product_summary">
+                <div class="oe_structure"/>
+
+                <h2 t-if="o.state == 'draft'">Request for Quotation #<span t-field="o.name"/></h2>
+                <h2 t-if="o.state in ['sent', 'to approve']">Purchase Order #<span t-field="o.name"/></h2>
+                <h2 t-if="o.state in ['purchase', 'done']">Purchase Order #<span t-field="o.name"/></h2>
+                <h2 t-if="o.state == 'cancel'">Cancelled Purchase Order #<span t-field="o.name"/></h2>
+                
+                <div id="summary_informations" class="row mt32 mb32">
+                    <div t-if="o.date_order" class="col-3 bm-2">
+                        <strong>Order Date:</strong>
+                        <p t-field="o.date_order" class="m-0"/>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-4">
+                        <h4>Product Summary:</h4>
+                    </div>
+                </div>
+                <table class="table table-sm" id="summary_table">
+                    <thead>
+                        <tr>
+                            <th name="th_id"><strong>Code</strong></th>
+                            <th name="th_name"><strong>Product Name</strong></th>
+                            <th name="th_summary" class="text-right"><strong>Total</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="o.order_line.mapped('product_id')" t-as="product_agg_line">
+                            <tr>
+                                <td>
+                                    <span t-field="product_agg_line.default_code"/>
+                                </td>
+                                <td>
+                                    <span t-field="product_agg_line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="sum(o.order_line.filtered(lambda x: x.product_id.id == product_agg_line.id).mapped('product_qty'))" t-options='{"widget": "float", "precision": 3}'/>
+                                    <span t-esc="product_agg_line.uom_id.name" groups="uom.group_uom"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+ 
+    <template id="report_purchasesummary">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="purchase.report_purchaseorder_document" t-lang="o.partner_id.lang"/>
+                <t t-call="purchase_order_product_summary.report_purchasesummary_document" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

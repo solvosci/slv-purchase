@@ -1,0 +1,1 @@
+Adds to purchase report a new section with the grouped products and their total.
