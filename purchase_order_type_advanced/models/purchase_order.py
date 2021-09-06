@@ -23,8 +23,10 @@ class PurchaseOrder(models.Model):
 
     def action_view_invoice(self):
         res = super(PurchaseOrder, self).action_view_invoice()
+        ctx = {}
         if self.order_type.journal_id:
-            res["default_journal_id"] = self.order_type.journal_id.id
+            ctx["default_journal_id"] = self.order_type.journal_id.id
         if self.order_type:
-            res["default_purchase_type_id"] = self.order_type.id
+            ctx["default_purchase_type_id"] = self.order_type.id
+        res["context"].update(ctx)
         return res
