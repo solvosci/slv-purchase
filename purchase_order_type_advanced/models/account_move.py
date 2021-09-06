@@ -19,7 +19,6 @@ class AccountMove(models.Model):
 
     @api.depends("partner_id", "company_id")
     def _compute_purchase_type_id(self):
-        self.purchase_type_id = self.env["purchase.order.type"]
         for record in self.filtered(
             lambda am: am.type in ["in_invoice", "in_refund"]
         ):
