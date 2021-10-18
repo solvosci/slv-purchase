@@ -8,10 +8,6 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='payment_term_id']" position="before">
                     <field name="journal_id" />
-                    <field
-                        name="pricelist_id"
-                        groups="product.group_product_pricelist"
-                    />
                     <field name="picking_type_id" domain="[('code','=','incoming')]"/>
                 </xpath>
             </field>

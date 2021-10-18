@@ -16,7 +16,3 @@ class PurchaseOrderType(models.Model):
         comodel_name='stock.picking.type',
         string='Deliver To'
     )
-    pricelist_id = fields.Many2one(
-        comodel_name="product.pricelist",
-        strint="Pricelist"
-    )
