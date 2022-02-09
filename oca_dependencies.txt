@@ -1,2 +1,3 @@
 account-payment
 purchase-workflow
+slv-general https://github.com/solvosci/slv-general/
