@@ -6,19 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-21 14:01+0000\n"
-"PO-Revision-Date: 2022-04-21 14:01+0000\n"
+"POT-Creation-Date: 2022-05-19 11:52+0000\n"
+"PO-Revision-Date: 2022-05-19 11:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: purchase_order_move_menu
-#: model:ir.model.fields,field_description:purchase_order_move_menu.field_stock_move__po_menu_price_amount_total
-msgid "Amount Total"
-msgstr ""
 
 #. module: purchase_order_move_menu
 #: model:ir.model.fields,field_description:purchase_order_move_menu.field_stock_move__po_currency_id
@@ -41,6 +36,11 @@ msgid "Group By"
 msgstr ""
 
 #. module: purchase_order_move_menu
+#: model_terms:ir.ui.view,arch_db:purchase_order_move_menu.stock_move_po_move_menu_search
+msgid "Location Orig"
+msgstr ""
+
+#. module: purchase_order_move_menu
 #: model:ir.model.fields,field_description:purchase_order_move_menu.field_stock_move__purchase_order
 msgid "Order Reference"
 msgstr ""
@@ -48,11 +48,6 @@ msgstr ""
 #. module: purchase_order_move_menu
 #: model_terms:ir.ui.view,arch_db:purchase_order_move_menu.stock_move_po_move_menu_search
 msgid "Picking"
-msgstr ""
-
-#. module: purchase_order_move_menu
-#: model:ir.model.fields,field_description:purchase_order_move_menu.field_stock_move__po_menu_invoice_lines_count
-msgid "Po Menu Invoice Lines Count"
 msgstr ""
 
 #. module: purchase_order_move_menu
@@ -82,11 +77,6 @@ msgid "Purchase Representative"
 msgstr ""
 
 #. module: purchase_order_move_menu
-#: model_terms:ir.ui.view,arch_db:purchase_order_move_menu.stock_move_po_move_menu_tree
-msgid "Quantity"
-msgstr ""
-
-#. module: purchase_order_move_menu
 #: model:ir.model.fields,help:purchase_order_move_menu.field_stock_move__po_product_categ_id
 msgid "Select category for the current product"
 msgstr ""
@@ -104,21 +94,6 @@ msgstr ""
 #. module: purchase_order_move_menu
 #: model_terms:ir.ui.view,arch_db:purchase_order_move_menu.stock_move_po_move_menu_tree
 msgid "To"
-msgstr ""
-
-#. module: purchase_order_move_menu
-#: model_terms:ir.ui.view,arch_db:purchase_order_move_menu.stock_move_po_move_menu_tree
-msgid "Total Amount"
-msgstr ""
-
-#. module: purchase_order_move_menu
-#: model_terms:ir.ui.view,arch_db:purchase_order_move_menu.stock_move_po_move_menu_tree
-msgid "Total Quantity"
-msgstr ""
-
-#. module: purchase_order_move_menu
-#: model:ir.model.fields,field_description:purchase_order_move_menu.field_stock_move__po_menu_price_unit
-msgid "Unit Price"
 msgstr ""
 
 #. module: purchase_order_move_menu
