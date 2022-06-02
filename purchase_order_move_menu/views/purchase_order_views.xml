@@ -10,17 +10,26 @@
         <field name="view_ids" eval="[(5, 0, 0),
             (0, 0, {'view_mode': 'tree', 'view_id': ref('stock_move_po_move_menu_tree')}),
             (0, 0, {'view_mode': 'form', 'view_id': ref('stock.view_move_form')})]"/>
-        <field name="domain">[('purchase_line_id','!=', False), ('state','=', 'done')]</field>
-        <!-- <field name="domain">['|', ('location_id.usage','=', 'customer'), ('location_dest_id.usage','=', 'customer'), ('state','=', 'done')]</field> -->
+        <!-- Default access is forbidden, this action shouldn't be directly accessed -->
+        <field name="domain">[('state','=','fake')]</field>
         <field name="context">{
             "search_default_filter_date": 1,
         }</field>
     </record>
 
+    <record model="ir.actions.server" id="action_stock_move_po_move_menu_srv">
+        <field name="name">Purchase Moves</field>
+        <field name="model_id" ref="model_stock_move"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_purchase_moves()
+        </field>
+    </record>
+
     <menuitem 
         id="menu_purchase_order_sale_moves"
         name="Purchase Moves" 
-        action="action_stock_move_po_move_menu"
+        action="action_stock_move_po_move_menu_srv"
         parent="purchase.menu_purchase_products"
         sequence="100"
         groups="stock.group_stock_user"
