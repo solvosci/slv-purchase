@@ -20,7 +20,7 @@ class AccountMove(models.Model):
     @api.depends("partner_id", "company_id")
     def _compute_purchase_type_id(self):
         for record in self.filtered(
-            lambda am: am.type in ["in_invoice", "in_refund"]
+            lambda am: am.move_type in ["in_invoice", "in_refund"]
         ):
             if not record.partner_id:
                 record.purchase_type_id = self.env["purchase.order.type"].search(
@@ -28,11 +28,11 @@ class AccountMove(models.Model):
                 )
             else:
                 purchase_type = (
-                    record.partner_id.with_context(
-                        force_company=record.company_id.id
+                    record.partner_id.with_company(
+                        record.company_id.id
                     ).purchase_type
-                    or record.partner_id.commercial_partner_id.with_context(
-                        force_company=record.company_id.id
+                    or record.partner_id.commercial_partner_id.with_company(
+                        record.company_id.id
                     ).purchase_type
                 )
                 if purchase_type:
