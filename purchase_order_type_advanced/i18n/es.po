@@ -6,16 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-18 10:35+0000\n"
-"PO-Revision-Date: 2021-10-18 12:36+0200\n"
+"POT-Creation-Date: 2022-10-28 11:44+0000\n"
+"PO-Revision-Date: 2022-10-28 11:44+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
-"Last-Translator: \n"
-"Language: es_ES\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: purchase_order_type_advanced
 #: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order_type__journal_id
@@ -23,26 +21,82 @@ msgid "Billing Journal"
 msgstr "Diario de facturación"
 
 #. module: purchase_order_type_advanced
+#: code:addons/purchase_order_type_advanced/models/purchase_order_type.py:0
+#, python-format
+msgid ""
+"Cannot change Deliver To data because the Purchase Order Type(s) [%s] is/are"
+" used in Stock Picking Type(s) [%s] as default purchase type for automatic "
+"purchases"
+msgstr ""
+"No es posible cambiar el dato Entregar a debido a que el/los Tipo(s) de"
+" pedido de compra [%s] está(n) en uso en el/los Tipo(s) de operación [%s]"
+" como tipo de pedido de compra por defecto para compras automáticas"
+
+#. module: purchase_order_type_advanced
 #: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order_type__picking_type_id
 msgid "Deliver To"
 msgstr "Entregar a"
 
 #. module: purchase_order_type_advanced
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_account_move__display_name
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order_type__display_name
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_stock_picking_type__display_name
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_stock_rule__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: purchase_order_type_advanced
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_account_move__id
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order__id
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order_type__id
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_stock_picking_type__id
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_stock_rule__id
+msgid "ID"
+msgstr "Id."
+
+#. module: purchase_order_type_advanced
 #: model:ir.model,name:purchase_order_type_advanced.model_account_move
-msgid "Journal Entries"
-msgstr "Registros del Diario"
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: purchase_order_type_advanced
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_account_move____last_update
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_purchase_order_type____last_update
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_stock_picking_type____last_update
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_stock_rule____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: purchase_order_type_advanced
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_stock_picking_type__buy_purchase_order_type_id
+msgid "Order type for automatic purchases"
+msgstr "Tipo de pedido para compras automáticas"
+
+#. module: purchase_order_type_advanced
+#: model:ir.model,name:purchase_order_type_advanced.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Tipo de albarán"
 
 #. module: purchase_order_type_advanced
 #: model:ir.model,name:purchase_order_type_advanced.model_purchase_order
 msgid "Purchase Order"
-msgstr "Pedido de compra"
+msgstr "Orden de Compra"
 
 #. module: purchase_order_type_advanced
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_account_bank_statement_line__purchase_type_id
 #: model:ir.model.fields,field_description:purchase_order_type_advanced.field_account_move__purchase_type_id
+#: model:ir.model.fields,field_description:purchase_order_type_advanced.field_account_payment__purchase_type_id
 msgid "Purchase Type"
 msgstr "Tipo de compra"
 
 #. module: purchase_order_type_advanced
+#: model:ir.model,name:purchase_order_type_advanced.model_stock_rule
+msgid "Stock Rule"
+msgstr "Regla de Inventario"
+
+#. module: purchase_order_type_advanced
 #: model:ir.model,name:purchase_order_type_advanced.model_purchase_order_type
 msgid "Type of purchase order"
-msgstr "Tipo de pedido de compra"
+msgstr "Orden de Compra"

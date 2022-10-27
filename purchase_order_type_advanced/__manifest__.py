@@ -16,7 +16,8 @@
     ],
     "data": [
         "views/purchase_order_type_views.xml",
-        "views/account_move_views.xml"
+        "views/account_move_views.xml",
+        "views/stock_picking_type_views.xml",
     ],
     'installable': True,
 }
