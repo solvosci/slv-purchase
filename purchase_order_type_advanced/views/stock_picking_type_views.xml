@@ -13,7 +13,7 @@
                 <field name="warehouse_id" position="after">
                     <field
                         name="buy_purchase_order_type_id" 
-                        domain="[('picking_type_id', 'in', [False, uid])]"
+                        domain="[('picking_type_id', 'in', [False, id])]"
                         attrs="{'invisible': [('code', '!=', 'incoming')]}"
                     />
                 </field>
