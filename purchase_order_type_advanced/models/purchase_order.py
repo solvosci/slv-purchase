@@ -26,9 +26,17 @@ class PurchaseOrder(models.Model):
     def action_view_invoice(self, invoices=False):
         res = super().action_view_invoice(invoices=invoices)
         ctx = ast.literal_eval(res.get("context", "{}"))
-        if self.order_type.journal_id:
-            ctx["default_journal_id"] = self.order_type.journal_id.id
-        if self.order_type:
-            ctx["default_purchase_type_id"] = self.order_type.id
+        if invoices:
+            # Batch invoice creation: first invoice rules for extra default
+            #  values in case of later new invoice creation
+            ctx.update({
+                "default_journal_id": invoices[0].journal_id.id or False,
+                "default_purchase_type_id": invoices[0].purchase_type_id.id or False,
+            })
+        else:
+            if self.order_type.journal_id:
+                ctx["default_journal_id"] = self.order_type.journal_id.id
+            if self.order_type:
+                ctx["default_purchase_type_id"] = self.order_type.id
         res["context"] = str(ctx)
         return res
