@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="fcd_document_line_view_form" model="ir.ui.view">
+        <field name="name">fcd.document.line.form (FCD Purchase Order)</field>
+        <field name="model">fcd.document.line</field>
+        <field name="inherit_id" ref="fcd.fcd_document_line_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">
+                <group>
+                    <group>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="product_qty" />
+                        <field name="price_unit" widget="monetary"/>
+                        <field name="subtotal" />
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fcd_document_line_view_tree" model="ir.ui.view">
+        <field name="name">fcd.document.line.tree (FCD Purchase Order)</field>
+        <field name="model">fcd.document.line</field>
+        <field name="inherit_id" ref="fcd.fcd_document_line_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='box_count']" position="after">
+                <field name="purchase_order_line_id" />
+                <field name="product_qty" />
+                <field name="price_unit" widget="monetary"/>
+                <field name="subtotal" />
+                <field name="currency_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fcd_document_line_view_tree_reduced" model="ir.ui.view">
+        <field name="name">fcd.document.line.tree (FCD Purchase Order)</field>
+        <field name="model">fcd.document.line</field>
+        <field name="inherit_id" ref="fcd_document_line_view_tree"/>
+        <field name="mode">primary</field>
+        <field eval="101" name="priority"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fcd_document_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='purchase_order_line_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fcd_document_line_view_search" model="ir.ui.view">
+        <field name="name">fcd.document.search (FCD Purchase Order)</field>
+        <field name="model">fcd.document.line</field>
+        <field name="inherit_id" ref="fcd.fcd_document_line_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='fcd_document_id']" position="after">
+                <field name="purchase_order_line_id" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

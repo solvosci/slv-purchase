@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_purchase_qr_code_reading" model="ir.actions.server">
+        <field name="name">QR Code Reading</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="binding_model_id" ref="purchase.model_purchase_order" />
+        <field name="binding_view_types">form</field>
+        <field name="state">code</field>
+        <field name="code">
+            action = model.action_purchase_qr_code_reading()
+        </field> 
+    </record>
+
+    <menuitem 
+        id="menu_purchase_qr_code_reading"
+        name="QR Code Readings"
+        parent="purchase.menu_purchase_root"
+        action="action_purchase_qr_code_reading"
+        sequence="99"
+        groups="fcd.group_fcd_user"/>
+
+</odoo>

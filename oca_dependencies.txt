@@ -1,0 +1,5 @@
+purchase-workflow
+product-attribute
+stock-logistics-warehouse
+crnd-web https://github.com/crnd-inc/crnd-web
+slv-stock https://github.com/solvosci/slv-stock
