@@ -32,7 +32,7 @@
 
   <template id="report_fcd_purchasae_order_tag_pdf">
     <t t-call="web.basic_layout">
-      <t t-foreach="docs" t-as="doc">
+      <t t-foreach="docs.filtered(lambda x: x.state in ['purchase','done'])" t-as="doc">
         <t t-call="fcd_purchase_order.report_fcd_purchasae_order_tag_document_pdf"/>
       </t>
     </t>
