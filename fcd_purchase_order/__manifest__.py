@@ -1,13 +1,13 @@
 # © 2022 Solvos Consultoría Informática (<http://www.solvos.es>)
-# License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
     "name": "FCD Purchase Order",
     "summary": """
         Adds purchase order link with fcd
     """,
     "author": "Solvos",
-    "license": "LGPL-3",
-    "version": "14.0.1.0.0",
+    "license": "AGPL-3",
+    "version": "14.0.1.0.1",
     "category": "Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": [
@@ -17,7 +17,7 @@
         "crnd_web_widget_scan_qrcode",
         "web_domain_field",
         "fcd",
-        "sequence_reset_period",
+        "sequence_reset_period"
     ],
     "data": [
         "data/ir_sequence.xml",
