@@ -50,7 +50,10 @@ class PurchaseOrder(models.Model):
     def create_fcd_documents(self):
         for line in self.order_line.filtered(lambda x: x.product_type == 'product' and x.fcd_lot_id.id == False):
             if line.fcd_lot_name:
+                #TODO: Check conversion to avoid reference assignment
+                import_qty = float(line.product_qty)
                 line.secondary_uom_id = line.product_id.purchase_secondary_uom_id.id
+                line.product_qty = import_qty
                 lot_id = self.env['stock.production.lot'].sudo().create({
                     'name': line.fcd_lot_name,
                     'product_id': line.product_id.id,

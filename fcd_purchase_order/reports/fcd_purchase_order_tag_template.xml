@@ -4,7 +4,7 @@
   <template id="report_fcd_purchasae_order_tag_document_pdf">
     <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
     <div class="page w-100" style="font-size: 16px;">
-      <div style="-webkit-display: -webkit-box; -webkit-display: -webkit-flex; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center;">
+      <div>
         <t t-foreach="doc.order_line.filtered(lambda x: x.fcd_lot_id.id != False)" t-as="line">
           <div style="width: 100%; margin: 1px; padding-left: 15px; padding-right: 15px; padding-top: 5px; padding-bottom: 5px; border: 1px solid black; border-radius: 10px; display: inline-block;">
             <div class="row" style="border-bottom: 1px solid black; align-items: end">
