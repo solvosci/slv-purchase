@@ -1,5 +1,5 @@
 # © 2022 Solvos Consultoría Informática (<http://www.solvos.es>)
-# License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields
 
