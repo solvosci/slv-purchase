@@ -70,17 +70,11 @@ class PurchaseOrder(models.Model):
                 fields.Datetime().now().month,
                 fields.Datetime().now().year
             )
-            fcd_document_id = self.env['fcd.document'].search([
-                ('name', '=', today),
-                ('partner_id', '=', line.partner_id.id),
-                ('product_id', '=', line.product_id.id)
-            ])
-            if not fcd_document_id:
-                fcd_document_id = self.env['fcd.document'].sudo().create({
-                    'name': today,
-                    'partner_id': line.partner_id.id,
-                    'product_id': line.product_id.id,
-                })
+            fcd_document_id = self.env['fcd.document'].sudo().create({
+                'name': today,
+                'partner_id': line.partner_id.id,
+                'product_id': line.product_id.id,
+            })
 
             fcd_document_line_id = self.env['fcd.document.line'].sudo().create({
                 'fcd_document_id': fcd_document_id.id,
