@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_move_line_account_analytic_tree" model="ir.ui.view">
+        <field name="name">stock_move_line_account_analytic_tree</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="model">stock.move.line</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='reference']" position="after">
+                <field name="po_account_analytic_id" groups="analytic.group_analytic_accounting"></field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_move_line_account_analytic_search" model="ir.ui.view">
+        <field name="name">stock_move_line_account_analytic_search</field>
+        <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+        <field name="model">stock.move.line</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="po_account_analytic_id" groups="analytic.group_analytic_accounting"></field>
+                <group expand="0" string="Group By">
+                    <filter string="PO Analytic Account" name="groupby_account_analytic" domain="[]" context="{'group_by':'po_account_analytic_id'}" groups="analytic.group_analytic_accounting"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
