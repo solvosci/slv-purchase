@@ -1,1 +1,1 @@
-Adds Partner Ref Mandatory in purchase order.
+Add Partner Ref field in purchase order
