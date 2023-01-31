@@ -7,8 +7,8 @@
     """,
     "author": "Solvos",
     "license": "LGPL-3",
-    "version": "15.0.1.0.0",
-    "category": "Inventory/Purchase",
+    "version": "15.0.1.1.0",
+    "category": "Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": [
         "purchase",

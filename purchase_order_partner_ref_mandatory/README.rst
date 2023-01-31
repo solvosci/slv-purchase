@@ -19,7 +19,7 @@ Purchase Order Partner Ref Mandatory
 
 |badge1| |badge2| |badge3| 
 
-Adds Partner Ref Mandatory in purchase order.
+Add Partner Ref field in purchase order
 
 **Table of contents**
 
