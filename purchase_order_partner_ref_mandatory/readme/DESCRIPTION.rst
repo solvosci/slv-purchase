@@ -1,1 +1,1 @@
-Add Partner Ref field in purchase order
+Highlight Partner Ref field in some views.
