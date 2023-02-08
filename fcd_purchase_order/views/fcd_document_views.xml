@@ -6,9 +6,6 @@
         <field name="model">fcd.document</field>
         <field name="inherit_id" ref="fcd.fcd_document_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='fao_zone_id']" position="before">
-                <field name="fao_zone_origin" />
-            </xpath>
             <xpath expr="//field[@name='fcd_document_line_ids']" position="attributes">
                 <attribute name="context">{'tree_view_ref':'fcd.fcd_document_line_view_tree_reduced'}</attribute>
             </xpath>

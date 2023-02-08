@@ -6,75 +6,80 @@
         <field name="arch" type="xml"> 
             <form string="QR Code Reading">
                 <header style="justify-content: flex-start">
-                    <field name="qr_code" widget="qr_code_widget" options="{'show_text': False}" nolabel="1" />
+                    <button name="save_and_new_purchase_order_line" class="btn-primary" type="object" string="New"/>
+                    <button name="save_and_next_purchase_order_line" class="btn-primary" type="object" string="Next"/>
+                    <field name="qr_code" classs="mr-2" widget="qr_code_widget" options="{'show_text': False}" nolabel="1"/>
                 </header>
-                <sheet>
-                    <h2 class="text-center"><field name="qr_type" readonly="1" nolabel="1" /></h2>
-                    <group>
-                        <group>
-                            <field name="partner_id" required="1" />
-                            <field name="tag_number" required="1" />
-                        </group>
-                        <group>
-                            <field name="product_id_domain" invisible="1"/>
-                            <field name="product_id" required="1" domain="product_id_domain" />
-                            <field name="price" required="1" />
-                        </group>
-                    </group>
-                    <separator colspan="4" />
-                    <group>
-                        <group>
-                            <field name="ship_id" />
-                            <field name="production_method_id" />
-                            <field name="fishing_gear_id" domain="[('ship_ids', 'in', ship_id)]" />
-                        </group>
-                        <group>
-                            <field name="country_id" />
-                            <field name="presentation_id" />
-                        </group>
-                    </group>
-                    <notebook>
-                        <page string="QR Data">
-                            <group>
-                                <group>
-                                    <field name="lot" required="1" readonly="1" />
-                                    <field name="scientific_name" readonly="1" />
-                                    <field name="sanity_reg" readonly="1" />
-                                    <field name="ship_name" readonly="1" />
-                                    <field name="fao_zone" readonly="1" />
-                                    <field name="fao" readonly="1" />
-                                    <field name="specific_lot" readonly="1" />
-                                </group>
-                                <group>
-                                    <field name="tide_start_date" readonly="1" />
-                                    <field name="tide_end_date" readonly="1" />
-                                    <field name="packaging_date" readonly="1" />
-                                    <field name="expiration_date" readonly="1" />
-                                    <field name="net_weight" readonly="1" />
-                                    <field name="packing" readonly="1" />
-                                </group>
+                <sheet class="mt-0 mb-0 pt-0 pb0">
+                  <notebook class="mt-0 mb-0 pt-0 pb0">
+                    <page string="QR Data">
+                        <group class="mt-0 mb-0 pt-0 pb0">
+                            <group class="mt-0 mb-0 pt-0 pb0">
+                                <field name="qr_code2" class="fcd_text_area"/>
+                                <field name="partner_id" required="1"/>
+                                <field name="tag_number" required="1"/>
                             </group>
-                        </page>
-                    </notebook>
+                            <group class="mt-0 mb-0 pt-0 pb0">
+                                <field name="product_id_domain" invisible="1"/>
+                                <field name="product_id" required="1" domain="product_id_domain"/>
+                                <label for="price" style="font-size: 200%;"/>
+                                <field name="price" style="font-size: 200%;" nolabel="1" required="1"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Manual Data">
+                      <group>
+                          <group>
+                              <field name="partner_id" required="1"/>
+                              <field name="tag_number" required="1"/>
+                              <field name="net_weight"/>
+                              <field name="total_weight" />
+                          </group>
+                          <group>
+                              <field name="product_id_domain" invisible="1"/>
+                              <field name="product_id" required="1" domain="product_id_domain"/>
+                              <field name="price" required="1"/>
+                              <field name="lot" required="1"/>
+                          </group>
+                      </group>
+                      <separator colspan="4"/>
+                      <group>
+                          <group>
+                                <field name="ship" invisible="1"/>
+                                <field name="ship_id"/>
+                                <field name="ship_license_plate" invisible="1"/>
+                                <field name="ship_license_plate_rel"/>
+                                <field name="production_method" invisible="1"/>
+                                <field name="production_method_id"/>
+                          </group>
+                          <group>
+                                <field name="fishing_gear" invisible="1"/>
+                                <field name="fishing_gear_id"/>
+                                <field name="presentation" invisible="1"/>
+                                <field name="presentation_id"/>
+                                <field name="fao_zone" invisible="1"/>
+                                <field name="subzone_id"/>
+                          </group>
+                      </group>
+                    <group>
+                        <group>
+                            <field name="scientific_name" invisible="1"/>
+                            <field name="sanity_reg" invisible="1"/>
+
+                            <field name="specific_lot"/>
+                            <field name="packing" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="tide_start_date"/>
+                            <field name="tide_end_date"/>
+                            <field name="packaging_date" invisible="1"/>
+                            <field name="expiration_date" invisible="1"/>
+                        </group>
+                    </group>
+                    </page>
+                  </notebook>
                 </sheet>
-                <footer>
-                    <button 
-                        name="save_and_new_purchase_order_line"
-                        class="btn-primary"
-                        type="object" 
-                        string="Save and New" />
-                    <button 
-                        name="save_and_next_purchase_order_line"
-                        class="btn-primary"
-                        type="object" 
-                        string="Save and Next" />
-                    <button 
-                        name="save_and_close_purchase_order_line"
-                        class="btn-primary"
-                        type="object" 
-                        string="Save and Close" />
-                    <button string="Cancel" class="btn-secondary" special="cancel" />
-                </footer>
+                <footer></footer>
             </form>
         </field>
     </record>

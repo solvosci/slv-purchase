@@ -7,7 +7,7 @@
     """,
     "author": "Solvos",
     "license": "AGPL-3",
-    "version": "14.0.1.1.1",
+    "version": "14.0.1.2.1",
     "category": "Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": [
@@ -25,6 +25,7 @@
         "security/ir.model.access.csv",
         "reports/fcd_purchase_order_tag_report.xml",
         "reports/fcd_purchase_order_tag_template.xml",
+        "views/assets.xml",
         "views/purchase_menu.xml",
         "views/purchase_order_views.xml",
         "views/fcd_document_views.xml",
