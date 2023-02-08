@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-29 08:58+0000\n"
-"PO-Revision-Date: 2022-11-29 08:58+0000\n"
+"POT-Creation-Date: 2023-04-13 08:59+0000\n"
+"PO-Revision-Date: 2023-04-13 08:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,8 +18,9 @@ msgstr ""
 #. module: fcd_purchase_order
 #: model_terms:ir.ui.view,arch_db:fcd_purchase_order.report_fcd_purchasae_order_tag_document_pdf
 msgid ""
-"<span class=\"d-block col-7 text-center\" style=\"border-right: 1px solid black\">Product</span>\n"
-"              <span class=\"d-block col-5 text-center\">Box Count</span>"
+"<span class=\"d-block col-6 text-center\" style=\"border-right: 1px solid black\">Product</span>\n"
+"                <span class=\"d-block col-3 text-center\" style=\"border-right: 1px solid black\">Box Count</span>\n"
+"                <span class=\"d-block col-3 text-center\">Quantity</span>"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -35,13 +36,12 @@ msgstr ""
 
 #. module: fcd_purchase_order
 #: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_reduced_wizard
-#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
 msgid "Cancel"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__country_id
-msgid "Country"
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__commercial_name
+msgid "Commercial Name"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -66,7 +66,6 @@ msgid "Description"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document__display_name
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document_line__display_name
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__display_name
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_purchase_order__display_name
@@ -96,11 +95,6 @@ msgid "Fao Zone"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document__fao_zone_origin
-msgid "Fao Zone Origin"
-msgstr ""
-
-#. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_purchase_order_line__fcd_document_line_id
 msgid "Fcd Document Line"
 msgstr ""
@@ -111,12 +105,17 @@ msgid "Fcd Lot Finished"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_purchase_order_line__fcd_lot_name
+msgid "Fcd Lot Name"
+msgstr ""
+
+#. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__fishing_gear
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__fishing_gear_id
 msgid "Fishing Gear"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document__id
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document_line__id
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__id
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_purchase_order__id
@@ -126,7 +125,17 @@ msgid "ID"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document____last_update
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__qr_code2
+msgid "Insert QR Code"
+msgstr ""
+
+#. module: fcd_purchase_order
+#: code:addons/fcd_purchase_order/wizards/fcd_purchase_order.py:0
+#, python-format
+msgid "Invalid QR Code!"
+msgstr ""
+
+#. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document_line____last_update
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard____last_update
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_purchase_order____last_update
@@ -146,6 +155,11 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__ship_license_plate_rel
+msgid "License Plate"
+msgstr ""
+
+#. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__lot
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_purchase_order_line__fcd_lot_id
 msgid "Lot"
@@ -157,6 +171,11 @@ msgid "Lot/Serial"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
+msgid "Manual Data"
+msgstr ""
+
+#. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document_line__name
 msgid "Name"
 msgstr ""
@@ -164,6 +183,16 @@ msgstr ""
 #. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__net_weight
 msgid "Net Weight"
+msgstr ""
+
+#. module: fcd_purchase_order
+#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
+msgid "New"
+msgstr ""
+
+#. module: fcd_purchase_order
+#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
+msgid "Next"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -182,6 +211,7 @@ msgid "Partner"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__presentation
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__presentation_id
 msgid "Presentation"
 msgstr ""
@@ -202,6 +232,7 @@ msgid "Product Id Domain"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__production_method
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__production_method_id
 msgid "Production Method"
 msgstr ""
@@ -264,18 +295,7 @@ msgstr ""
 
 #. module: fcd_purchase_order
 #: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_reduced_wizard
-#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
 msgid "Save and Close"
-msgstr ""
-
-#. module: fcd_purchase_order
-#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
-msgid "Save and New"
-msgstr ""
-
-#. module: fcd_purchase_order
-#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
-msgid "Save and Next"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -284,13 +304,14 @@ msgid "Scientific Name"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__ship
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__ship_id
 msgid "Ship"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__ship_name
-msgid "Ship Name"
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__ship_license_plate
+msgid "Ship License Plate"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -302,6 +323,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document_line__subtotal
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_stock_production_lot__fcd_document_line_subtotal
 msgid "Subtotal"
+msgstr ""
+
+#. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__subzone_id
+msgid "Subzone"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -320,6 +346,11 @@ msgid "Tide Start Date"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__total_weight
+msgid "Total Weight"
+msgstr ""
+
+#. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_document_line__price_unit
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_stock_production_lot__fcd_document_line_price_unit
 msgid "Unit Price"
@@ -329,11 +360,6 @@ msgstr ""
 #: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #, python-format
 msgid "WITHOUT LOT PR %s/%s/%s"
-msgstr ""
-
-#. module: fcd_purchase_order
-#: model:ir.model,name:fcd_purchase_order.model_fcd_document
-msgid "fcd.document"
 msgstr ""
 
 #. module: fcd_purchase_order
