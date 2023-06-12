@@ -43,7 +43,7 @@ class StockMove(models.Model):
         store=True
     )
 
-    @api.depends("state", "purchase_line_id.price_unit", "invoice_line_ids.move_id.state", "invoice_line_ids.price_unit", "quantity_done")
+    @api.depends("state", "purchase_line_id.price_unit", "invoice_line_ids.move_id.state", "invoice_line_ids.price_unit", "quantity_done", "invoice_line_ids.date")
     def _compute_purchase_move_menu(self):
         precision = self.env["decimal.precision"].precision_get(
             "Product Price"
@@ -51,10 +51,10 @@ class StockMove(models.Model):
         for record in self:
 
             invoices = record.invoice_line_ids.mapped("move_id").filtered(
-                lambda x: x.invoice_date
+                lambda x: x.date
             )
             record.po_menu_invoice_first_date = (
-                invoices and invoices.sorted("invoice_date")[0].invoice_date
+                invoices and invoices.sorted("date")[0].date
                 or False
             )
 
