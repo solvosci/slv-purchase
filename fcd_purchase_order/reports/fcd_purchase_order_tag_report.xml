@@ -3,7 +3,9 @@
     <record id="paperformat_cigurria_purchase_line_tag" model="report.paperformat">
         <field name="name">Purchase Line Cigurria Tag</field>
         <field name="default" eval="True" />
-        <field name="format">A4</field>
+        <field name="format">custom</field>
+        <field name="page_height">70</field>
+        <field name="page_width">160</field>
         <field name="orientation">Portrait</field>
         <field name="margin_top">3</field>
         <field name="margin_bottom">3</field>
