@@ -3,11 +3,11 @@
 {
     "name": "Purchase Order Type Advanced",
     "summary": """
-        Adds extra fields to the purchase order type (journal, picking type,...)
+        Adds extra fields to the purchase order type (journal, picking type, analytic account...)
     """,
     "author": "Solvos",
     "license": "LGPL-3",
-    "version": "13.0.1.0.2",
+    "version": "13.0.1.1.0",
     'category': "Operations/Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": [

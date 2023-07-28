@@ -13,6 +13,10 @@ class PurchaseOrder(models.Model):
         for order in self:
             if order.order_type.picking_type_id:
                 order.picking_type_id = order.order_type.picking_type_id
+            if order.order_type.analytic_account_id:
+                order.order_line.write({
+                    "account_analytic_id": order.order_type.analytic_account_id.id,
+                })
 
     def action_view_invoice(self):
         res = super(PurchaseOrder, self).action_view_invoice()
