@@ -16,3 +16,8 @@ class PurchaseOrderType(models.Model):
         comodel_name='stock.picking.type',
         string='Deliver To'
     )
+    analytic_account_id = fields.Many2one(
+        comodel_name="account.analytic.account",
+        string="Analytic account",
+        check_company=True,
+    )

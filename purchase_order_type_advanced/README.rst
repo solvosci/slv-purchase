@@ -19,7 +19,8 @@ Purchase Order Type Advanced
 
 |badge1| |badge2| |badge3| 
 
-Adds extra fields to the purchase order type (journal, picking type,...)
+Adds extra fields to the purchase order type (journal, picking type,
+analytic account...)
 
 **Table of contents**
 
