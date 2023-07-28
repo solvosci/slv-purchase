@@ -8,6 +8,10 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='payment_term_id']" position="before">
                     <field name="journal_id" />
+                    <field
+                        name="analytic_account_id"
+                        groups="analytic.group_analytic_accounting"
+                    />
                     <field name="picking_type_id" domain="[('code','=','incoming')]"/>
                 </xpath>
             </field>
@@ -20,6 +24,10 @@
                 <xpath expr="//field[@name='description']" position="after">
                     <field name="picking_type_id" />
                     <field name="journal_id" />
+                    <field
+                        name="analytic_account_id"
+                        groups="analytic.group_analytic_accounting"
+                    />
                 </xpath>
             </field>
         </record>
@@ -31,6 +39,10 @@
                 <xpath expr="//field[@name='incoterm_id']" position="after">
                     <field name="picking_type_id" />
                     <field name="journal_id" />
+                    <field
+                        name="analytic_account_id"
+                        groups="analytic.group_analytic_accounting"
+                    />
                 </xpath>
             </field>
         </record>
