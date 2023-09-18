@@ -27,16 +27,9 @@ class StockMove(models.Model):
         Modifies original purchase stock move action depending on Purchase
         role of the logged user
         """
-        # Alternative development: making our own action from scatch, like
-        #  https://github.com/odoo/odoo/blob/13.0/addons/stock/models/stock_quant.py#L622
-        # The selected strategy allow us to define action in XML file,
-        #  but has the problem of the needed "fake zero results domain" in
-        #  order to prevent "F5" pages reload, that should only use the
-        #  original action definition
-        action = self.env.ref(
+        result = self.env["ir.actions.act_window"]._for_xml_id(
             "purchase_order_move_menu.action_stock_move_po_move_menu"
         )
-        result = action.read()[0]
         # Default (fake) domain is replaced with the right one
         domain_str = "('purchase_line_id','!=', False), ('state','=', 'done')"
         if not self._check_purchase_all_permissions(self.env.user):
