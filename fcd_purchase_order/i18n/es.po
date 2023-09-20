@@ -338,7 +338,7 @@ msgstr "Zona"
 #. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__tag_number
 msgid "Tag Number"
-msgstr "Número de etiqueta"
+msgstr "Nº Etiquetas/Cajas"
 
 #. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__tide_end_date
