@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-13 08:59+0000\n"
-"PO-Revision-Date: 2023-04-13 08:59+0000\n"
+"POT-Creation-Date: 2023-12-14 07:08+0000\n"
+"PO-Revision-Date: 2023-12-14 07:08+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,8 +19,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fcd_purchase_order.report_fcd_purchasae_order_tag_document_pdf
 msgid ""
 "<span class=\"d-block col-6 text-center\" style=\"border-right: 1px solid black\">Product</span>\n"
-"                <span class=\"d-block col-3 text-center\" style=\"border-right: 1px solid black\">Box Count</span>\n"
-"                <span class=\"d-block col-3 text-center\">Quantity</span>"
+"              <span class=\"d-block col-3 text-center\" style=\"border-right: 1px solid black\">Box Count</span>\n"
+"              <span class=\"d-block col-3 text-center\">Quantity</span>"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -29,6 +29,7 @@ msgid "Add line"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #, python-format
 msgid "Add purchase order line"
@@ -131,6 +132,7 @@ msgstr ""
 
 #. module: fcd_purchase_order
 #: code:addons/fcd_purchase_order/wizards/fcd_purchase_order.py:0
+#: code:addons/fcd_purchase_order/wizards/fcd_purchase_order.py:0
 #, python-format
 msgid "Invalid QR Code!"
 msgstr ""
@@ -232,6 +234,11 @@ msgid "Product Id Domain"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: model:ir.actions.report,name:fcd_purchase_order.action_report_fcd_purchasae_order_product_lot_pdf
+msgid "Product/Lot Codes"
+msgstr ""
+
+#. module: fcd_purchase_order
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__production_method
 #: model:ir.model.fields,field_description:fcd_purchase_order.field_fcd_purchase_order_wizard__production_method_id
 msgid "Production Method"
@@ -254,6 +261,7 @@ msgid "Purchase Order Tags"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #: model:ir.actions.server,name:fcd_purchase_order.action_purchase_qr_code_reading
 #: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
@@ -357,6 +365,7 @@ msgid "Unit Price"
 msgstr ""
 
 #. module: fcd_purchase_order
+#: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #, python-format
 msgid "WITHOUT LOT PR %s/%s/%s"
