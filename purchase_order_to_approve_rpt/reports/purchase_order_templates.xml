@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        If purchase_order_approved is installed, there's an o.name
+        span field extra, so we ensure obtaining the original ones
+        putting a high priority for this template
+    -->
+    <template
+        id="report_purchaseorder_document"
+        inherit_id="purchase.report_purchaseorder_document"
+        priority="10"
+    >
+        <xpath expr="(//span[@t-field='o.name'])[1]/.." position="attributes">
+            <attribute name="t-if">o.state in ['draft', 'sent']</attribute>
+        </xpath>
+        <xpath expr="(//span[@t-field='o.name'])[2]/.." position="attributes">
+            <attribute name="t-if">o.state in ['to approve', 'purchase', 'done']</attribute>
+        </xpath>
+    </template>
+</odoo>
