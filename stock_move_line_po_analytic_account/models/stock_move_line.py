@@ -11,7 +11,6 @@ class AccountAnalyticAccount(models.Model):
         compute="_compute_po_account_analytic_id",
         store=True)
 
-    @api.multi
     @api.depends('move_id.purchase_line_id.account_analytic_id')
     def _compute_po_account_analytic_id(self):
         for record in self:

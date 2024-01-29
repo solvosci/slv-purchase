@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* stock_move_line_po_analytic_account
+# 	* stock_move_line_po_analytic_account
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-13 10:13+0000\n"
-"PO-Revision-Date: 2023-01-13 10:13+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2024-01-29 16:08+0000\n"
+"PO-Revision-Date: 2024-01-29 16:08+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,18 +16,17 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: stock_move_line_po_analytic_account
-#: model:ir.model.fields,field_description:stock_move_line_po_analytic_account.field_stock_move_line_po_account_analytic_id
-#: model:ir.ui.view,arch_db:stock_move_line_po_analytic_account.stock_move_line_account_analytic_search
-msgid "PO Analytic Account"
-msgstr ""
-
-#. module: stock_move_line_po_analytic_account
-#: model:ir.ui.view,arch_db:stock_move_line_po_analytic_account.stock_move_line_account_analytic_search
+#: model_terms:ir.ui.view,arch_db:stock_move_line_po_analytic_account.stock_move_line_account_analytic_search
 msgid "Group By"
 msgstr ""
 
 #. module: stock_move_line_po_analytic_account
-#: model:ir.model,name:stock_move_line_po_analytic_account.model_stock_move_line
-msgid "Packing Operation"
+#: model:ir.model.fields,field_description:stock_move_line_po_analytic_account.field_stock_move_line__po_account_analytic_id
+#: model_terms:ir.ui.view,arch_db:stock_move_line_po_analytic_account.stock_move_line_account_analytic_search
+msgid "PO Analytic Account"
 msgstr ""
 
+#. module: stock_move_line_po_analytic_account
+#: model:ir.model,name:stock_move_line_po_analytic_account.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr ""
