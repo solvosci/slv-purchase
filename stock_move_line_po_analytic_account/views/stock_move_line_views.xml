@@ -6,7 +6,11 @@
         <field name="model">stock.move.line</field>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='reference']" position="after">
-                <field name="po_account_analytic_id" groups="analytic.group_analytic_accounting"></field>
+                <field
+                    name="po_account_analytic_id"
+                    groups="analytic.group_analytic_accounting"
+                    optional="hide"
+                />
             </xpath>
         </field>
     </record>
