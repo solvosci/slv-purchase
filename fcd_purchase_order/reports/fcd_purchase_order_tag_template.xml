@@ -71,7 +71,9 @@
 
       <t t-foreach="doc.order_line.filtered(lambda x: x.fcd_lot_id)" t-as="line">
         <div style="page-break-inside: avoid;">
-          <span class="d-block text-center" style="border-bottom: 1px solid black"><t t-esc="line.product_id.name"/></span>
+          <span class="d-block text-center" style="border-bottom: 1px solid black">
+            <span t-field="line.product_id.name"/> - <span t-field="line.product_qty"/><span t-field="line.product_uom.name"/>
+          </span>
           <div class="row mt-2">
             <div class="col-6">
                 <div t-if="line.product_id.barcode" class="text-center"  style="display: flex; justify-content: center; align-items: center;">
