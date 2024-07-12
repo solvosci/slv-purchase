@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">
+                res.partner.form (in purchase_security_advanced)
+            </field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <group name="purchase" position="inside">
+                    <field
+                        name="purchase_user_id"
+                        groups="purchase.group_purchase_manager"
+                    />
+                </group>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="name">
+                res.partner.select (in purchase_security_advanced)
+            </field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field
+                        name="purchase_user_id"
+                        groups="purchase.group_purchase_manager"
+                    />
+                </field>
+                <filter name="salesperson" position="after">
+                    <filter
+                        name="groupby_purchase_user_id"
+                        string="Purchase Representative"
+                        domain="[]"
+                        context="{'group_by': 'purchase_user_id'}"
+                        groups="purchase.group_purchase_manager"
+                    />
+                </filter>
+            </field>
+        </record>
+    </data>
+</odoo>
