@@ -7,13 +7,14 @@
     """,
     "author": "Solvos",
     "license": "LGPL-3",
-    "version": "13.0.1.0.0",
+    "version": "13.0.2.0.0",
     'category': "Operations/Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": [
         "purchase_security",
     ],
     "data": [
+        "views/res_partner_views.xml",
         "views/purchase_order_views.xml"
     ],
     'installable': True,

@@ -15,10 +15,10 @@
                 <field name="partner_id" position="attributes">
                     <attribute name="domain">[
                         '|',
-                            ('user_id','=', uid),
+                            ('purchase_user_id','=', uid),
                             '&amp;',
-                                ('user_id', '=', False),
-                                ('parent_id.user_id', '=', uid),
+                                ('purchase_user_id', '=', False),
+                                ('parent_id.purchase_user_id', '=', uid),
                     ]</attribute>
                 </field>
             </field>
