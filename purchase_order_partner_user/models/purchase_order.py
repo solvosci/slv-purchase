@@ -9,8 +9,7 @@ class PurchaseOrder(models.Model):
 
     @api.onchange("partner_id")
     def onchange_partner_user_id(self):
-        self.ensure_one()
-        if self.partner_id.user_id:
-            self.user_id = self.partner_id.user_id
-        else:
-            self.user_id = self.env.user
+        """
+        TODO compatibility mode
+        """
+        pass
