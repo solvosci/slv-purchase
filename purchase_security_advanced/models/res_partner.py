@@ -7,7 +7,10 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    user_id = fields.Many2one(index=True)
+
     purchase_user_id = fields.Many2one(
         comodel_name="res.users",
         string="Purchase Representative",
+        index=True
     )
