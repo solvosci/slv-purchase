@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <record id="purchase_order_kpis_tree" model="ir.ui.view"> 
@@ -7,7 +6,7 @@
         <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_ref']" position="attributes">
-                <attribute name="invisible">True</attribute>
+                <attribute name="column_invisible">1</attribute>
             </xpath>
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="partner_ref" /> 
@@ -69,7 +68,7 @@
         <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_ref']" position="attributes">
-                <attribute name="invisible">True</attribute>
+                <attribute name="column_invisible">1</attribute>
             </xpath>  
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="partner_ref" optional="show"/> 
