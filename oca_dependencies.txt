@@ -1,3 +1,4 @@
+account-analytic
 purchase-workflow
 product-attribute
 stock-logistics-warehouse
