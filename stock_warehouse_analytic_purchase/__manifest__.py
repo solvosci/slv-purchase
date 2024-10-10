@@ -1,5 +1,5 @@
 # © 2024 Solvos Consultoría Informática (<http://www.solvos.es>)
-# License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
+# License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 {
     "name": "Stock Warehouse Analytic Purchase",
     "summary": """
@@ -7,10 +7,10 @@
         this new definition has a higher priority than "Analytic Defaults Rules"
     """,
     "author": "Solvos",
-    "license": "LGPL-3",
-    "version": "14.0.1.0.0",
+    "license": "AGPL-3",
+    "version": "14.0.1.0.1",
     "category": "Inventory/Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
-    "depends": ["purchase"],
+    "depends": ["stock_warehouse_analytic"],
     'installable': True,
 }
