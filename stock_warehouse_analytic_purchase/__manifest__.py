@@ -8,9 +8,9 @@
     """,
     "author": "Solvos",
     "license": "AGPL-3",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "category": "Inventory/Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
-    "depends": ["stock_warehouse_analytic"],
+    "depends": ["stock_warehouse_analytic", "purchase_stock"],
     'installable': True,
 }
