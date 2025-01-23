@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_normal_form_view_inherit_purchase" model="ir.ui.view">
+        <field name="name">product.product.form.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product_form_purchase_link.product_normal_form_view_inherit_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(product_form_purchase_link.action_purchase_line_product_product_tree)d']/field" position="attributes"> 
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//button[@name='%(product_form_purchase_link.action_purchase_line_product_product_tree)d']/field" position="after"> 
+                <field name="purchased_ever_product_qty" widget="statinfo" string="Purchases"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
