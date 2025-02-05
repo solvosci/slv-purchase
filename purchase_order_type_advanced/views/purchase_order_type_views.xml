@@ -14,6 +14,13 @@
                     />
                     <field name="picking_type_id" domain="[('code','=','incoming')]"/>
                 </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field
+                        name="payment_term_prioritary"
+                        widget="boolean_toggle"
+                        attrs="{'invisible': [('payment_term_id', '=', False)]}"
+                    />
+                </xpath>
             </field>
         </record>
         <record id="purchase_order_type_advanced_tree_view" model="ir.ui.view">
@@ -27,6 +34,12 @@
                     <field
                         name="analytic_account_id"
                         groups="analytic.group_analytic_accounting"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field
+                        name="payment_term_prioritary"
+                        string="Prior."
                     />
                 </xpath>
             </field>

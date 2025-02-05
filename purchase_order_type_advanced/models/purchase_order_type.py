@@ -1,7 +1,7 @@
 # © 2021 Solvos Consultoría Informática (<http://www.solvos.es>)
 # License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class PurchaseOrderType(models.Model):
@@ -21,3 +21,17 @@ class PurchaseOrderType(models.Model):
         string="Analytic account",
         check_company=True,
     )
+
+    payment_term_prioritary = fields.Boolean(
+        string="Is Payment Term Prioritary",
+        compute="_compute_payment_term_prioritary",
+        store=True,
+        readonly=False,
+        default=False,
+    )
+
+    @api.depends("payment_term_id")
+    def _compute_payment_term_prioritary(self):
+        self.filtered(lambda x: not x.payment_term_id).update({
+            "payment_term_prioritary": False,
+        })
