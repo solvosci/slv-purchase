@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form (in purchase_order_maintenance_equipment_link)</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_ref']" position="before">
+                <field 
+                    name="maintenance_equipment_default_id"
+                    attrs="{'readonly': [('state', 'in', ('purchase', 'to approve','done', 'cancel'))]}" />
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="before">
+                <field 
+                    name="maintenance_equipment_ids"
+                    widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="attributes">
+                <attribute
+                    name="domain"
+                    operation="domain_add"
+                    condition="maintenance_equipment_ids"
+                    join_operator="AND"
+                >
+                    ['|',('maintenance_equipment_ids', 'in', maintenance_equipment_ids),('maintenance_equipment_ids','=',False)]
+                </attribute>
+            </xpath>
+            <xpath 
+                expr="//page/field[@name='order_line']/form/group/group[2]/field[@name='date_planned']" 
+                position="after"
+            >
+                <field 
+                    name="maintenance_equipment_ids"
+                    widget="many2many_tags"
+                    readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
