@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_purchase_order_type_form" model="ir.ui.view">
+        <field name="name">purchase.order.type,form (in purchase_order_type_maintenance_equipment_link)</field>
+        <field name="model">purchase.order.type</field>
+        <field name="inherit_id" ref="purchase_order_type.view_purchase_order_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='incoterm_id']" position="after">
+                <field name="use_maintenance_equipment" widget='boolean_toggle'/>                
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_type_tree" model="ir.ui.view">
+        <field name="name">purchase.order.type.tree (in purchase_order_type_maintenance_equipment_link)</field>
+        <field name="model">purchase.order.type</field>
+        <field name="inherit_id" ref="purchase_order_type.view_purchase_order_type_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence_id']" position="after">
+                <field name="use_maintenance_equipment" string='Use Eq.' optional='hide' widget='boolean_toggle'/>  
+            </xpath>
+        </field>
+    </record>
+</odoo>

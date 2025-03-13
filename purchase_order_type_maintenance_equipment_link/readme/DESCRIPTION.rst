@@ -1,0 +1,1 @@
+Controls the visibility of maintenance equipments in purchase order lines based on the purchase order type.
