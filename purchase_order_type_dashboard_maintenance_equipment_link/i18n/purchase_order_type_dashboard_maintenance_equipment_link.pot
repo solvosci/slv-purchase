@@ -1,0 +1,38 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_order_type_dashboard_maintenance_equipment_link
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-09 13:39+0000\n"
+"PO-Revision-Date: 2025-04-09 13:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_order_type_dashboard_maintenance_equipment_link
+#: model:ir.actions.act_window,name:purchase_order_type_dashboard_maintenance_equipment_link.purchase_order_general_action
+#: model:ir.ui.menu,name:purchase_order_type_dashboard_maintenance_equipment_link.purchase_order_general_menu
+msgid "General Orders"
+msgstr ""
+
+#. module: purchase_order_type_dashboard_maintenance_equipment_link
+#: model:ir.actions.act_window,name:purchase_order_type_dashboard_maintenance_equipment_link.purchase_order_maintenance_action
+#: model:ir.ui.menu,name:purchase_order_type_dashboard_maintenance_equipment_link.purchase_order_maintenance_menu
+msgid "Maintenance Orders"
+msgstr ""
+
+#. module: purchase_order_type_dashboard_maintenance_equipment_link
+#: model:ir.model,name:purchase_order_type_dashboard_maintenance_equipment_link.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: purchase_order_type_dashboard_maintenance_equipment_link
+#: model:ir.model,name:purchase_order_type_dashboard_maintenance_equipment_link.model_purchase_order_type
+msgid "Type of purchase order"
+msgstr ""

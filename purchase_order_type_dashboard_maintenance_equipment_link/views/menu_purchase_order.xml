@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_type_dashboard.purchase_order_dashboard_menu" model="ir.ui.menu">
+        <field name="action" eval="False"/>
+    </record>
+
+    <record id="purchase_order_general_action" model="ir.actions.act_window">
+        <field name="name">General Orders</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.order.type</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('use_maintenance_equipment','=',False)]</field>
+    </record>
+    <menuitem
+        id="purchase_order_general_menu"
+        name="General Orders"
+        action="purchase_order_general_action"
+        parent="purchase_order_type_dashboard.purchase_order_dashboard_menu"
+        sequence="20"/>
+
+    <record id="purchase_order_maintenance_action" model="ir.actions.act_window">
+    <field name="name">Maintenance Orders</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">purchase.order.type</field>
+    <field name="view_mode">kanban,tree,form</field>
+    <field name="domain">[('use_maintenance_equipment','!=',False)]</field>
+    </record>
+    <menuitem
+        id="purchase_order_maintenance_menu"
+        name="Maintenance Orders"
+        action="purchase_order_maintenance_action"
+        parent="purchase_order_type_dashboard.purchase_order_dashboard_menu"
+        sequence="40"/>
+</odoo>
