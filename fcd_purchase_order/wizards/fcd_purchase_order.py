@@ -6,6 +6,7 @@ from odoo.exceptions import ValidationError
 import re
 import json
 import datetime
+from datetime import timedelta
 
 
 class FCDPurchaseOrder(models.TransientModel):
@@ -322,14 +323,15 @@ class FCDPurchaseOrder(models.TransientModel):
 
     def create_update_purchase_order_line(self):
         fcd_document_line_id = self.create_fcd_document_line()
-        date_start_order = fields.Datetime.to_datetime(fields.Date.today()).strftime("%Y-%m-%d 00:00:00")
-        date_end_order = fields.Datetime.to_datetime(fields.Date.today()).strftime("%Y-%m-%d 23:59:59")
+        date_end_order = fields.Datetime.now()
+        date_start_order = date_end_order - timedelta(hours=8)
         if self.purchase_order_id:
             purchase_order_id = self.purchase_order_id
             quantity = self.quantity
         else:
             purchase_order_id = self.env['purchase.order'].search([
                 ('partner_id', '=', self.partner_id.id),
+                ('user_id', '=', self.env.user.id),
                 ('state', '!=', 'cancel'),
                 ('date_order','>=', date_start_order),
                 ('date_order','<=', date_end_order)], order='id')
