@@ -360,8 +360,12 @@ class FCDPurchaseOrder(models.TransientModel):
                 'secondary_uom_id': self.product_id.purchase_secondary_uom_id.id,
                 'price_unit': self.price,
             })
+        # In case this code is insufficient change line_id to line_id.with_context(tz=self.env.user.tz)
+        sequence = self.env['ir.sequence'].with_context(
+            ir_sequence_date=fields.Date.context_today(line_id)
+        ).next_by_code('lot_cigurria')
         lot_id = self.env['stock.production.lot'].sudo().create({
-            'name': self.env['ir.sequence'].next_by_code('lot_cigurria'),
+            'name': sequence,
             'product_id': self.product_id.id,
             'company_id': self.env.user.company_id.id,
             # 'expiration_date': self.expiration_date, Posibles errores en la báscula en el caso de que se genere una orden de fabricacion en estado pendiente si está caducado, el primer caso no da problemas pero los posteriores si
