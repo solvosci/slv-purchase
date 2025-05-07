@@ -60,8 +60,12 @@ class PurchaseOrder(models.Model):
                     'company_id': self.env.user.company_id.id,
                 })
             else:
+                # In case this code is insufficient change line to line.with_context(tz=self.env.user.tz)
+                sequence = self.env['ir.sequence'].with_context(
+                    ir_sequence_date=fields.Date.context_today(line)
+                ).next_by_code('lot_cigurria')
                 lot_id = self.env['stock.production.lot'].sudo().create({
-                    'name': self.env['ir.sequence'].next_by_code('lot_cigurria'),
+                    'name': sequence,
                     'product_id': line.product_id.id,
                     'company_id': self.env.user.company_id.id,
                 })
