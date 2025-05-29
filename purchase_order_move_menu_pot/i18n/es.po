@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_order_move_menu_pot
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-30 06:09+0000\n"
+"PO-Revision-Date: 2025-05-30 06:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_order_move_menu_pot
+#: model:ir.model.fields,field_description:purchase_order_move_menu_pot.field_stock_move__po_menu_exclude
+msgid "Excluded for PO moves menu"
+msgstr "Excluir del menú de movimientos de compras"
+
+#. module: purchase_order_move_menu_pot
+#: model:ir.model,name:purchase_order_move_menu_pot.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: purchase_order_move_menu_pot
+#: model:ir.model.fields,field_description:purchase_order_move_menu_pot.field_purchase_order_type__stock_move_menu_exclude
+msgid "Stock Move Menu Exclude"
+msgstr "Excluir del menú de movimiento de compra"
+
+#. module: purchase_order_move_menu_pot
+#: model:ir.model,name:purchase_order_move_menu_pot.model_purchase_order_type
+msgid "Type of purchase order"
+msgstr "Tipo de pedido de compra"
