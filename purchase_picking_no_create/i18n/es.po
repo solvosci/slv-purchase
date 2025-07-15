@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-14 06:39+0000\n"
-"PO-Revision-Date: 2025-07-14 06:39+0000\n"
+"POT-Creation-Date: 2025-07-15 06:39+0000\n"
+"PO-Revision-Date: 2025-07-15 06:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,14 @@ msgstr "Pedido de compra"
 
 #. module: purchase_picking_no_create
 #: code:addons/purchase_picking_no_create/models/purchase_order.py:0
+#: code:addons/purchase_picking_no_create/models/stock_move.py:0
 #, python-format
 msgid "You cannot manually create Stock Move from a Purchase Order."
-msgstr "No puede crear manualmente movimientos desde un pedido de compra."
+msgstr "No puede crear manualmente movimientos de un pedido de compra."
 
 #. module: purchase_picking_no_create
 #: code:addons/purchase_picking_no_create/models/purchase_order.py:0
+#: code:addons/purchase_picking_no_create/models/stock_picking.py:0
 #, python-format
 msgid "You cannot manually create Stock Picking from a Purchase Order."
-msgstr "No puede crear manualmente albaranes desde un pedido de compra"
+msgstr "No puede crear manualmente albaranes de un pedido de compra"
