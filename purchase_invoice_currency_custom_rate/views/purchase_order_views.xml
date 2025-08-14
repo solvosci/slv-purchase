@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="custom_rate_enabled_visible" invisible="1"/>
+                <field name="is_custom_rate" attrs="{'invisible': [('custom_rate_enabled_visible', '=', False)]}"/>
+                <field name="custom_rate" attrs="{'invisible': [('is_custom_rate', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

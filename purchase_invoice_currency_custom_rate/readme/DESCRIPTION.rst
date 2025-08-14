@@ -1,0 +1,1 @@
+Allows you to send rate values from a purchase when the invoice is issued in a currency other than the primary currency.
