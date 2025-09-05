@@ -1,5 +1,6 @@
 # © 2022 Solvos Consultoría Informática (<http://www.solvos.es>)
 # License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
+
 from odoo import models
 
 
@@ -20,7 +21,6 @@ class PurchaseOrder(models.Model):
             lambda x: x.state == "assigned"
         )
         if pickings:
-            itwiz = self.env["stock.immediate.transfer"].create({
-                "pick_ids": [(6, False, pickings.ids)]
-            })
-            itwiz.process()
+            pickings.action_confirm()
+            pickings.action_assign()
+            pickings.button_validate()
