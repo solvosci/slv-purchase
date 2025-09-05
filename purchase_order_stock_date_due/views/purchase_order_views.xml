@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
         <record id="purchase_order_form" model="ir.ui.view">
             <field name="name">
-                purchase.order.form (in purchase_order_payment_term)
+                purchase.order.form (in purchase_order_stock_date_due)
             </field>
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_form" />
@@ -11,14 +10,14 @@
                 <field name="payment_term_id" position="after">
                     <field
                         name="purchase_date_due"
-                        attrs="{'invisible': [('date_approve','=',False)]}"
-                    />                    
+                        invisible="date_approve == False"
+                    />
                 </field>
             </field>
         </record>
         <record id="purchase_order_view_tree" model="ir.ui.view">
             <field name="name">
-                purchase.order.view.tree (in purchase_order_payment_term)
+                purchase.order.view.tree (in purchase_order_stock_date_due)
             </field>
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_view_tree" />
@@ -34,7 +33,7 @@
         </record>
         <record id="purchase_order_view_search" model="ir.ui.view">
             <field name="name">
-                purchase.order.select (in purchase_order_payment_term)
+                purchase.order.search (in purchase_order_stock_date_due)
             </field>
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_view_search" />
