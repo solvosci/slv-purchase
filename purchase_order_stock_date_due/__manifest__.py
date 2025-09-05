@@ -1,5 +1,5 @@
 # © 2021 Solvos Consultoría Informática (<http://www.solvos.es>)
-# License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
+# License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 {
     "name": "Purchase Order - Due Date based on Stock Pickings",
     "summary": """
@@ -8,7 +8,7 @@
     """,
     "author": "Solvos",
     "license": "AGPL-3",
-    "version": "13.0.1.0.0",
+    "version": "17.0.1.0.0",
     'category': "Operations/Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": ["account_payment_term_extension", "purchase_stock"],
