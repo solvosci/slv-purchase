@@ -1,2 +1,0 @@
-- When contacts access is restricted, enable visibility to those contacts whom I'm follower (like OCA's `sales_team_security` does, see `message_partner_ids`).
-- Change behavior with non-assigned contacts (they become not accessible, but for `sales_team_security`, in certain conditions, are accesible by everyone).

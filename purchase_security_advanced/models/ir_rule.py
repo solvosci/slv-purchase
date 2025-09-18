@@ -24,10 +24,11 @@ class IrRule(models.Model):
         """Inject extra domain for restricting partners when the user
         has the group 'Purchase / User: Own Documents Only'.
         """
-        res = super()._compute_domain(model_name, mode=mode)
+        self = self.with_context(skip_extra_contacts_rules=True)
+        res = super(IrRule, self)._compute_domain(model_name, mode=mode)
         user = self.env.user
 
-        # Purchases: 
+        # Purchases:
         P0 = "purchase.group_purchase_user" # Purchases: all documents
         P1 = "purchase_security.group_purchase_own_orders" # Purchases: own documents
         P2 = "purchase.group_purchase_manager" # Purchase Manager
