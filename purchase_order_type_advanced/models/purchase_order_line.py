@@ -7,11 +7,14 @@ from odoo import api, models
 class PurchaseOrderLine(models.Model):
     _inherit = "purchase.order.line"
 
-    @api.model
-    def create(self, values):
-        order_id = self.env["purchase.order"].browse(
-            values.get("order_id")
-        )
-        if order_id.order_type.analytic_account_id:
-            values["account_analytic_id"] = order_id.order_type.analytic_account_id.id
-        return super().create(values)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for values in vals_list:
+            order_id = self.env["purchase.order"].browse(
+                values.get("order_id")
+            )
+            if order_id.order_type.analytic_account_id:
+                values["analytic_distribution"] = {
+                    order_id.order_type.analytic_account_id.id: 100,
+                }
+            return super().create(values)

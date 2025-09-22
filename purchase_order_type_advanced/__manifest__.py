@@ -1,13 +1,13 @@
 # © 2021 Solvos Consultoría Informática (<http://www.solvos.es>)
-# License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
+# License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 {
     "name": "Purchase Order Type Advanced",
     "summary": """
         Adds extra fields to the purchase order type (journal, picking type, analytic account...)
     """,
     "author": "Solvos",
-    "license": "LGPL-3",
-    "version": "13.0.1.1.0",
+    "license": "AGPL-3",
+    "version": "17.0.1.0.0",
     'category': "Operations/Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": [
