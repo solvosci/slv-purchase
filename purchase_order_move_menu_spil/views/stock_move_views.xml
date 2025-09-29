@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="stock_move_po_move_menu_tree" model="ir.ui.view">
         <field name="name">
@@ -13,17 +12,17 @@
             <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-success">po_menu_invoice_lines_count == 1</attribute>
                 <attribute name="decoration-info">po_menu_invoice_lines_count == 0</attribute>
-                <attribute name="decoration-muted">po_menu_invoice_lines_count > 1</attribute>
+                <attribute name="decoration-muted">po_menu_invoice_lines_count &gt; 1</attribute>
             </xpath>
             <xpath expr="//field[@name='date']" position="before">
-                <field name="po_menu_invoice_lines_count" invisible="1"/>
-                <field name="po_menu_negative_amount" invisible="1"/>
+                <field name="po_menu_invoice_lines_count" column_invisible="1"/>
+                <field name="po_menu_negative_amount" column_invisible="1"/>
             </xpath>
             <xpath expr="//field[@name='purchase_partner_id']" position="after">
                 <field name="po_menu_quantity_done" options="{'fg_color': 'red: po_menu_negative_amount == True'}" string="Quantity" sum="Total Quantity"/>
             </xpath>
             <xpath expr="//field[@name='product_uom']" position="after">
-                <field name="po_currency_id" invisible="1"/>
+                <field name="po_currency_id" column_invisible="1"/>
                 <field name="po_menu_price_unit" />
                 <field name="po_menu_price_amount_total" options="{'fg_color': 'red: po_menu_negative_amount == True'}" widget="monetary" sum="Total Amount"/>
                 <field name="po_menu_invoice_first_date" optional="show"/>
@@ -33,10 +32,10 @@
 
     <record id="stock_move_po_move_menu_search" model="ir.ui.view">
         <field name="name">
-            stock.move.tree (Purchase Moves) (in pruchase_order_move_menu_spil)
+            stock.move.search (Purchase Moves) (in pruchase_order_move_menu_spil)
         </field>
         <field name="model">stock.move</field>
-        <field 
+        <field
             name="inherit_id"
             ref="purchase_order_move_menu.stock_move_po_move_menu_search"
         />
