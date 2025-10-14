@@ -46,7 +46,17 @@ class PurchaseOrder(models.Model):
             'type': 'ir.actions.act_window',
         }
 
+    def button_confirm(self):
+        res = super(PurchaseOrder, self).button_confirm()
+        for order in self:
+            order.create_fcd_documents()
+        return res
+
     @api.constrains('order_line')
+    def create_line_fcd_confirmed(self):
+        if self.state in ['purchase', 'done']:
+            self.create_fcd_documents()
+
     def create_fcd_documents(self):
         for line in self.order_line.filtered(lambda x: x.product_type == 'product' and x.fcd_lot_id.id == False):
             if line.fcd_lot_name:
