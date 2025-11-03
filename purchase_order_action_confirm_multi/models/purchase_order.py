@@ -9,4 +9,6 @@ class PurchaseOrder(models.Model):
 
     def action_purchase_order_confirm_multi(self):
         for record in self.browse(self.env.context['active_ids']).filtered(lambda x: x.state in ('draft', 'sent')):
+            if not record.payment_term_id:
+                record.onchange_partner_id()
             record.button_confirm()
