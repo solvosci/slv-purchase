@@ -1,7 +1,8 @@
 # © 2021 Solvos Consultoría Informática (<http://www.solvos.es>)
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from odoo import api, models
+from odoo import _, api, models
+from odoo.exceptions import UserError
 
 import ast
 
@@ -34,6 +35,13 @@ class PurchaseOrder(models.Model):
 
         return invoice_vals
 
+    def action_create_invoice(self):
+        if len(self.mapped("order_type")) > 1:
+            raise UserError(_(
+                "Selected purchase orders within the same group contain different order types."
+            ))
+        return super().action_create_invoice()
+        
     def action_view_invoice(self, invoices=False):
         result = super().action_view_invoice(invoices=invoices)
         purchase_types = self.order_type
