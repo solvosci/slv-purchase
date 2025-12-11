@@ -4,11 +4,11 @@
 from odoo import models
 
 
-class PurchaseOrderLine(models.Model):
-    _inherit = "purchase.order.line"
+class PurchaseOrder(models.Model):
+    _inherit = "purchase.order"
 
-    def _suggest_quantity(self):
+    def _add_supplier_to_product(self):
         # This will look for sellers (partners), that couldn't be directly
         #  accessed by some users. Then, permssions must be bypassed
-        line_obj = self.with_context(skip_sellers_permissions=True)
-        super(PurchaseOrderLine, line_obj)._suggest_quantity()
+        order_obj = self.with_context(skip_sellers_permissions=True)
+        super(PurchaseOrder, order_obj)._add_supplier_to_product()
