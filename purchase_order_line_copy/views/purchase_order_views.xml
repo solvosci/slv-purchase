@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="view_purchase_order_inherit" model="ir.ui.view">
         <field name="name">purchase.order.form (in purchase_order_line_copy)</field>
@@ -11,7 +10,7 @@
                     icon="fa-copy"
                     type="object"
                     aria-label="Copy line" 
-                    attrs="{'invisible': [('state', 'in', ['cancel', 'done'])]}"
+                    invisible="state in ['cancel', 'done']"
                     confirm="Are you sure you want to copy this order line?"/>
             </xpath>
         </field>
