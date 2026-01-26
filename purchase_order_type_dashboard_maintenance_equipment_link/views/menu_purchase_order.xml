@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="purchase_order_type_dashboard.purchase_order_dashboard_menu" model="ir.ui.menu">
         <field name="action" eval="False"/>
