@@ -30,7 +30,7 @@ class MaintenanceEquipment(models.Model):
             'context':{},
             'domain': [('id', "in", self.purchase_order_ids.ids)]
         }
-        
+
         if self.purchase_order_count == 1:
             action['view_mode'] = 'form'
             action['res_id'] = self.purchase_order_ids.id
