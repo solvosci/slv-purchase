@@ -14,8 +14,6 @@ class PurchaseOrder(models.Model):
 
     @api.onchange('show_maintenance_equipment')
     def _onchange_show_maintenance_equipment(self):
-        for record in self:
-            if not record.show_maintenance_equipment:
-                record.maintenance_equipment_default_id = False
-                for order_line in record.order_line:
-                    order_line.maintenance_equipment_ids = False
+        for record in self.filtered(lambda x: not x.show_maintenance_equipment):
+            record.maintenance_equipment_default_id = False
+            record.order_line.maintenance_equipment_ids = False
