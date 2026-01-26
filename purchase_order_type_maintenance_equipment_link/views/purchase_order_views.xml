@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="purchase_order_form" model="ir.ui.view">
         <field name="name">purchase.order.form (in purchase_order_type_maintenance_equipment_link)</field>
@@ -6,15 +5,13 @@
         <field name="inherit_id" ref="purchase_order_maintenance_equipment_link.purchase_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="show_maintenance_equipment" invisible="1" />                
+                <field name="show_maintenance_equipment" invisible="1" />
             </xpath>
             <xpath expr="//field[@name='maintenance_equipment_default_id']" position="attributes">
-                <attribute name="attrs" operation="python_dict" key="invisible">
-                    [('show_maintenance_equipment', '=', False)]
-                </attribute>
+                <attribute name="invisible">not show_maintenance_equipment</attribute>
             </xpath>
             <xpath expr="//field[@name='maintenance_equipment_ids']" position="attributes">
-                <attribute name="attrs">{'column_invisible': [('parent.show_maintenance_equipment', '=', False)]}</attribute>
+                <attribute name="column_invisible">not parent.show_maintenance_equipment</attribute>
             </xpath>
         </field>
     </record>
