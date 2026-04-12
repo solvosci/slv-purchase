@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_category_property_form_stock" model="ir.ui.view">
+        <field
+            name="name"
+        >product.category.stock.property.form.inherit.stock (in purchase_stock_upd_std_price)</field>
+        <field name="model">product.category</field>
+        <field
+            name="inherit_id"
+            ref="stock_account.view_category_property_form_stock"
+        />
+        <field name="arch" type="xml">
+            <field name="property_cost_method" position="after">
+                <field
+                    name="property_cm_standard_auto_upd"
+                    string="Price Auto upd. from last purchase"
+                    widget="boolean_toggle"
+                    attrs="{
+                        'invisible': [
+                            ('property_cost_method', '!=', 'standard'),
+                        ],
+                    }"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="product_category_search_view" model="ir.ui.view">
+        <field
+            name="name"
+        >product.category.search (in purchase_stock_upd_std_price)</field>
+        <field name="model">product.category</field>
+        <field
+            name="inherit_id"
+            ref="product.product_category_search_view"
+        />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">                
+                <filter
+                    name="property_cm_standard_auto_upd_enabled"
+                    string="Price Auto upd. from last purchase"
+                    domain="[('property_cm_standard_auto_upd', '=', True)]"
+                    groups="!base.group_multi_company"
+                />
+                <separator />
+            </field>
+        </field>
+    </record>
+</odoo>
