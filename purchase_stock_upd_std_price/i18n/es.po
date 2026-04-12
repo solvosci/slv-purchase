@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_stock_upd_std_price
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-30 07:32+0000\n"
+"PO-Revision-Date: 2026-04-30 09:43+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: purchase_stock_upd_std_price
+#: model:ir.model.fields,help:purchase_stock_upd_std_price.field_product_category__property_cm_standard_auto_upd
+msgid ""
+"\n"
+"        When Cost Method is set to 'standard price', setting this "
+"will\n"
+"        enable automatic product standar price update when a incoming\n"
+"        picking that comes from a purchase is validated.\n"
+"        This let is keeping our products cost always up-to-date the\n"
+"        last purchase\n"
+"        "
+msgstr ""
+"\n"
+"        Cuando el método de coste es 'precio estándar', marcar esta "
+"opción\n"
+"        activará la actualización automática del precio de coste del "
+"producto\n"
+"        cuando se valide una transferencia de entrada que provenga de "
+"una compra.\n"
+"        Esto permite mantener los precios de los productos "
+"actualizados siempre\n"
+"        de acuerdo a la última compra\n"
+"        "
+
+#. module: purchase_stock_upd_std_price
+#: model_terms:ir.ui.view,arch_db:purchase_stock_upd_std_price.product_category_search_view
+#: model_terms:ir.ui.view,arch_db:purchase_stock_upd_std_price.view_category_property_form_stock
+msgid "Price Auto upd. from last purchase"
+msgstr "Act. auto. precios en base a últ. compra"
+
+#. module: purchase_stock_upd_std_price
+#: model:ir.model,name:purchase_stock_upd_std_price.model_product_category
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: purchase_stock_upd_std_price
+#: code:addons/purchase_stock_upd_std_price/models/stock_move.py:0
+#, python-format
+msgid ""
+"Product price at %s have been set according to %s purchase order stock "
+"incoming"
+msgstr ""
+"Se ha actualizado el precio del producto para %s de acuerdo a la "
+"recepción del pedido de compra  %s"
+
+#. module: purchase_stock_upd_std_price
+#: model:ir.model.fields,field_description:purchase_stock_upd_std_price.field_product_category__property_cm_standard_auto_upd
+msgid "Standard Price Cost Method - automatic price update"
+msgstr ""
+"Método de coste a precio estándar - Actualización automática de precio"
+
+#. module: purchase_stock_upd_std_price
+#: model:ir.model,name:purchase_stock_upd_std_price.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de Existencias"
