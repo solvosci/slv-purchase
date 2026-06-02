@@ -36,7 +36,7 @@ class StockMove(models.Model):
         for move in moves_upd_price:
             product = move.product_id.with_company(
                 move.company_id
-            )
+            ).sudo()
             product.standard_price = move.price_unit
             post_message = _(
                 "Product price at %s have been set according to %s purchase order stock incoming",
