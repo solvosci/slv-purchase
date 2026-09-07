@@ -9,12 +9,20 @@ class PurchaseOrderLine(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        for values in vals_list:
-            order_id = self.env["purchase.order"].browse(
-                values.get("order_id")
-            )
-            if order_id.order_type.analytic_account_id:
-                values["analytic_distribution"] = {
-                    order_id.order_type.analytic_account_id.id: 100,
+        order_ids = self.env["purchase.order"].browse(
+            [values.get("order_id") for values in vals_list]
+        )
+        order_dict = {
+            order.id: (
+                {
+                    order.order_type.analytic_account_id.id: 100,
                 }
-            return super().create(values)
+                if order.order_type.analytic_account_id
+                else {}
+            )
+            for order in order_ids
+        }
+        # TODO if analytic_distribution is already filled? This overwrites it
+        for values in vals_list:
+            values["analytic_distribution"] = order_dict.get(values.get("order_id"))
+        return super().create(vals_list)
