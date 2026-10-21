@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-14 07:08+0000\n"
-"PO-Revision-Date: 2023-12-14 07:08+0000\n"
+"POT-Creation-Date: 2026-10-21 06:55+0000\n"
+"PO-Revision-Date: 2026-10-21 06:55+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,9 +30,13 @@ msgstr ""
 
 #. module: fcd_purchase_order
 #: code:addons/fcd_purchase_order/models/purchase_order.py:0
-#: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #, python-format
 msgid "Add purchase order line"
+msgstr ""
+
+#. module: fcd_purchase_order
+#: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_purchase_order_form_inherit_secondary_unit
+msgid "Boxes"
 msgstr ""
 
 #. module: fcd_purchase_order
@@ -131,7 +135,6 @@ msgid "Insert QR Code"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: code:addons/fcd_purchase_order/wizards/fcd_purchase_order.py:0
 #: code:addons/fcd_purchase_order/wizards/fcd_purchase_order.py:0
 #, python-format
 msgid "Invalid QR Code!"
@@ -262,7 +265,6 @@ msgstr ""
 
 #. module: fcd_purchase_order
 #: code:addons/fcd_purchase_order/models/purchase_order.py:0
-#: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #: model:ir.actions.server,name:fcd_purchase_order.action_purchase_qr_code_reading
 #: model_terms:ir.ui.view,arch_db:fcd_purchase_order.view_fcd_purchase_order_wizard
 #, python-format
@@ -365,7 +367,6 @@ msgid "Unit Price"
 msgstr ""
 
 #. module: fcd_purchase_order
-#: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #: code:addons/fcd_purchase_order/models/purchase_order.py:0
 #, python-format
 msgid "WITHOUT LOT PR %s/%s/%s"
