@@ -3,7 +3,7 @@
         <xpath expr="//th[@name='th_discount']" position="attributes">
         <attribute name="t-if">False</attribute>
         </xpath>
-        <xpath expr="//span[@t-field='line.discount']/.." position="attributes">
+        <xpath expr="//td[span/span[@t-field='line.discount']]" position="attributes">
             <attribute name="t-if">False</attribute>
         </xpath>
     </template>
