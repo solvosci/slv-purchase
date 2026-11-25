@@ -1,0 +1,23 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_report_product_manufacturer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-26 08:07+0000\n"
+"PO-Revision-Date: 2026-11-26 08:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_report_product_manufacturer
+#: model_terms:ir.ui.view,arch_db:purchase_report_product_manufacturer.report_purchaseorder_document_product_manufacturer
+#: model_terms:ir.ui.view,arch_db:purchase_report_product_manufacturer.report_purchasequotation_document_product_manufacturer
+msgid "<strong>Manufacturer</strong>"
+msgstr "<strong>Fabricante</strong>"
