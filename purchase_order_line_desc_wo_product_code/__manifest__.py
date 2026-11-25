@@ -7,7 +7,7 @@
     """,
     "author": "Solvos," "Odoo Community Association (OCA)",
     "license": "LGPL-3",
-    "version": "17.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Purchase",
     "website": "https://github.com/solvosci/slv-purchase",
     "depends": [
