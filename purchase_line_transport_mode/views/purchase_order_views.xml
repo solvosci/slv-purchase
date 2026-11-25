@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_transport_mode" model="ir.ui.view">
+        <field name="name">purchase.order.form.transport.mode</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_qty']" position="before">
+                <field name="transport_mode" optional="show"
+                    readonly="state in ('cancel',) or is_downpayment"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form//field[@name='date_planned']" position="before">
+                <field name="transport_mode"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_line_search_transport_mode" model="ir.ui.view">
+        <field name="name">purchase.order.line.search.transport.mode</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter name="transport_sea" string="SEA" domain="[('transport_mode', '=', 'sea')]"/>
+                <filter name="transport_air" string="AIR" domain="[('transport_mode', '=', 'air')]"/>
+                <filter name="groupby_transport_mode" string="Transport Mode"
+                        context="{'group_by': 'transport_mode'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
